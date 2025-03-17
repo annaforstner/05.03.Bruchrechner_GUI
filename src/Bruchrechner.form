@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Bruchrechner">
+  <grid id="27dc6" binding="anzeigen" layout-manager="GridLayoutManager" row-count="7" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="15" left="15" bottom="15" right="15"/>
+    <constraints>
+      <xy x="20" y="20" width="691" height="400"/>
+    </constraints>
+    <properties>
+      <background color="-989556"/>
+      <enabled value="true"/>
+      <foreground color="-6710785"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="87a74" class="javax.swing.JLabel" binding="zähler1Txt">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Bitte hier den ersten Zähler eingeben."/>
+        </properties>
+      </component>
+      <component id="12df7" class="javax.swing.JLabel" binding="ergTxt">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Ergebnis: "/>
+        </properties>
+      </component>
+      <component id="faab2" class="javax.swing.JLabel" binding="nenner2Txt">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Bitte den zweiten Nenner eingeben."/>
+        </properties>
+      </component>
+      <component id="318ca" class="javax.swing.JLabel" binding="zähler2Txt">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Hier bitte den zweiten Zähler eingeben."/>
+        </properties>
+      </component>
+      <component id="6056f" class="javax.swing.JLabel" binding="nenner1Txt">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Hier den ersten Nenner eingeben."/>
+        </properties>
+      </component>
+      <component id="4ed98" class="javax.swing.JTextField" binding="zähler1">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="50" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-103"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="1c685" class="javax.swing.JTextField" binding="nenner1">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="50" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-103"/>
+        </properties>
+      </component>
+      <component id="21edf" class="javax.swing.JTextField" binding="zähler2">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="50" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-103"/>
+          <foreground color="-60269"/>
+        </properties>
+      </component>
+      <component id="99b3" class="javax.swing.JTextField" binding="nenner2">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="50" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-103"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="60dde" class="javax.swing.JButton" binding="btnAdd">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1979137"/>
+          <foreground color="-3730043"/>
+          <text value="addieren"/>
+        </properties>
+      </component>
+      <component id="8193d" class="javax.swing.JButton" binding="btnSub">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1979137"/>
+          <foreground color="-3730043"/>
+          <text value="subtrahieren"/>
+        </properties>
+      </component>
+      <component id="ca0a0" class="javax.swing.JButton" binding="btnDiv">
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1979137"/>
+          <foreground color="-3730043"/>
+          <text value="dividieren"/>
+        </properties>
+      </component>
+      <component id="bc910" class="javax.swing.JButton" binding="btnMul">
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1979137"/>
+          <foreground color="-3730043"/>
+          <text value="multiplizieren"/>
+        </properties>
+      </component>
+      <component id="76d4b" class="javax.swing.JButton" binding="btnErg">
+        <constraints>
+          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-10027009"/>
+          <foreground color="-16777063"/>
+          <text value="Ergebnis"/>
+        </properties>
+      </component>
+      <component id="210c9" class="javax.swing.JLabel" binding="label1">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="+ + + + + + + + + + + + + + + + + + + +"/>
+        </properties>
+      </component>
+      <component id="68ed6" class="javax.swing.JLabel" binding="label2">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="+ + + + + + + + + + + + + + + + + + + +"/>
+        </properties>
+      </component>
+      <component id="b960" class="javax.swing.JButton" binding="btnClear">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-3342439"/>
+          <foreground color="-16751104"/>
+          <text value="clear"/>
+        </properties>
+      </component>
+      <component id="18942" class="javax.swing.JTextArea" binding="ergebnisField">
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="50" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-3342337"/>
+          <editable value="true"/>
+          <font name="Courier New" style="0"/>
+          <foreground color="-16777063"/>
+          <text value=""/>
+          <wrapStyleWord value="false"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
