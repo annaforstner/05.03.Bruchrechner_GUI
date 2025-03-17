@@ -60,6 +60,7 @@
         </constraints>
         <properties>
           <background color="-103"/>
+          <foreground color="-16777114"/>
           <text value=""/>
         </properties>
       </component>
@@ -71,6 +72,7 @@
         </constraints>
         <properties>
           <background color="-103"/>
+          <foreground color="-16777114"/>
         </properties>
       </component>
       <component id="21edf" class="javax.swing.JTextField" binding="zähler2">
@@ -81,7 +83,7 @@
         </constraints>
         <properties>
           <background color="-103"/>
-          <foreground color="-60269"/>
+          <foreground color="-16777114"/>
         </properties>
       </component>
       <component id="99b3" class="javax.swing.JTextField" binding="nenner2">
@@ -92,6 +94,7 @@
         </constraints>
         <properties>
           <background color="-103"/>
+          <foreground color="-16777114"/>
           <text value=""/>
         </properties>
       </component>
@@ -174,7 +177,7 @@
       <component id="18942" class="javax.swing.JTextArea" binding="ergebnisField">
         <constraints>
           <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="50" height="-1"/>
+            <preferred-size width="50" height="40"/>
           </grid>
         </constraints>
         <properties>

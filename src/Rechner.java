@@ -11,32 +11,35 @@ public class Rechner {
         this.nenner2 = nenner2;
     }
 
-    int zahlOben1 = zähler1 * nenner2;
-    int zahlOben2 = zähler2 * nenner1;
-    int zahlUnten = nenner1 * nenner2;
-
-    public int nennerAddSUb(){
-        return zahlUnten;
-    }
-    public int zählerAdd(){
-        return zahlOben1 + zahlOben2;
-    }
-    public int zählerSub(){
-        return zahlOben1 - zahlOben2;
-    }
-
-    public int zählerMul(){
-        return zähler1 * zähler2;
-    }
-    public int nennerMul(){
+    // Addition: (a/b) + (c/d) = (a*d + c*b) / (b*d)
+    public int getNennerAddition() {
         return nenner1 * nenner2;
     }
-    public int zählerDiv(){
+
+    public int getZählerAddition() {
+        return (zähler1 * nenner2) + (zähler2 * nenner1);
+    }
+
+    // Subtraktion: (a/b) - (c/d) = (a*d - c*b) / (b*d)
+    public int getZählerSubtraktion() {
+        return (zähler1 * nenner2) - (zähler2 * nenner1);
+    }
+
+    // Multiplikation: (a/b) * (c/d) = (a*c) / (b*d)
+    public int getZählerMultiplikation() {
+        return zähler1 * zähler2;
+    }
+
+    public int getNennerMultiplikation() {
+        return nenner1 * nenner2;
+    }
+
+    // Division: (a/b) ÷ (c/d) = (a*d) / (b*c)
+    public int getZählerDivision() {
         return zähler1 * nenner2;
     }
 
-    public int nennerDiv(){
-        return nenner1 + zähler2;
+    public int getNennerDivision() {
+        return nenner1 * zähler2;
     }
-
 }

@@ -2,8 +2,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static java.lang.Integer.parseInt;
-
 public class Bruchrechner extends JFrame{
     private JPanel anzeigen;
     private JTextField zähler1;
@@ -25,6 +23,10 @@ public class Bruchrechner extends JFrame{
     private JLabel ergTxt;
     private JTextArea ergebnisField;
 
+    private Rechner rechner; // Instanzvariable für den Rechner
+    private int ergebnisZähler;
+    private int ergebnisNenner;
+
     public Bruchrechner(){
         setTitle("Bruchrechner");
         setContentPane(anzeigen);
@@ -33,37 +35,29 @@ public class Bruchrechner extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
 
-        try {
-            int zahl1 = parseInt(zähler1.getText().trim());
-            int zahl2 = parseInt(nenner1.getText().trim());
-            int zahl3 = parseInt(zähler2.getText().trim());
-            int zahl4 = parseInt(nenner2.getText().trim());
+        // Event-Listener für Addition
+        btnAdd.addActionListener(e -> berechne("+"));
 
-        }catch (NumberFormatException ex){
-            JOptionPane.showMessageDialog(null, "Fehler: Ungültige Eingabe!");
-        }
-        Bruchzahlen bruch = new Bruchzahlen(zahl1, zahl2, zahl3, zahl4);
+        // Event-Listener für Subtraktion
+        btnSub.addActionListener(e -> berechne("-"));
 
+        // Event-Listener für Multiplikation
+        btnMul.addActionListener(e -> berechne("*"));
 
+        // Event-Listener für Division
+        btnDiv.addActionListener(e -> berechne("/"));
 
-        btnAdd.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-
-            }
-        });
-
-
-        btnErg.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String zahler = "3";
-                String nenner = "4";
-                String bruch = zahler+"\n---\n"+ nenner;
+        // Ergebnis-Anzeige
+        btnErg.addActionListener(e -> {
+            if (rechner != null) {
+                String bruch = ergebnisZähler + "\n---\n" + ergebnisNenner;
                 ergebnisField.setText(bruch);
+            } else {
+                ergebnisField.setText("Kein Ergebnis berechnet!");
             }
         });
+
+        // Felder leeren
         btnClear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -75,6 +69,44 @@ public class Bruchrechner extends JFrame{
             }
         });
 
+    }
+
+    private void berechne(String operator) {
+        try {
+            int zahl1 = Integer.parseInt(zähler1.getText().trim());
+            int zahl2 = Integer.parseInt(nenner1.getText().trim());
+            int zahl3 = Integer.parseInt(zähler2.getText().trim());
+            int zahl4 = Integer.parseInt(nenner2.getText().trim());
+
+            if (zahl2 == 0 || zahl4 == 0) {
+                JOptionPane.showMessageDialog(this, "Nenner darf nicht 0 sein!", "Fehler", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            rechner = new Rechner(zahl1, zahl3, zahl2, zahl4);
+
+            switch (operator) {
+                case "+":
+                    ergebnisZähler = rechner.getZählerAddition();
+                    ergebnisNenner = rechner.getNennerAddition();
+                    break;
+                case "-":
+                    ergebnisZähler = rechner.getZählerSubtraktion();
+                    ergebnisNenner = rechner.getNennerAddition(); // Nenner bleibt gleich
+                    break;
+                case "*":
+                    ergebnisZähler = rechner.getZählerMultiplikation();
+                    ergebnisNenner = rechner.getNennerMultiplikation();
+                    break;
+                case "/":
+                    ergebnisZähler = rechner.getZählerDivision();
+                    ergebnisNenner = rechner.getNennerDivision();
+                    break;
+            }
+
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Fehler: Ungültige Eingabe!", "Fehler", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public static void main(String[] args) {
